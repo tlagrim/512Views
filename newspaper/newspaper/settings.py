@@ -111,8 +111,8 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = '/home/timothy/fiveonetwo/newspaper/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = STATIC_ROOT + '/media/'
-# MEDIA_URL = STATIC_URL + '/media/'
+MEDIA_ROOT = STATIC_ROOT + '/media'
+MEDIA_URL = '/media/'
 
 # Log files
 

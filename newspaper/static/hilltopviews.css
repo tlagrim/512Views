@@ -1,3 +1,21 @@
+.transparent-main-slider-background {
+    background-color:rgba(255,0,0,0.2);
+}
+
+#main-background {
+    /*position: absolute;
+    min-height:100%;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;*/
+    background: url('./media/photos/socostreetview.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover; /*for webKit*/
+        -moz-background-size: cover; /*Mozilla*/
+        -o-background-size: cover; /*opera*/
+        background-size: cover; /*generic*/
+}
+
 .top-space {
     padding-top: 10px;
 }

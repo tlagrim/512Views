@@ -1,4 +1,5 @@
 # main urls
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
@@ -13,6 +14,9 @@ urlpatterns = [
 ]
 
 urlpatterns = patterns('',
+                       # For media to be presented in templates
+                       url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT, }),
+                       url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT, }),
                        # Examples:
                        # url(r'^$', 'newspaper.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
@@ -26,6 +30,7 @@ urlpatterns = patterns('',
                        #url(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete', name='password_reset_complete'),
                        #end password reset URL
                        url(r'^admin', include(admin.site.urls)),
+                       url(r'^adminlogout', include(admin.site.urls)),
                        url(r'^articles/', include('articles.urls')),
                        url(r'^contributors/', include('contributors.urls')),
                        url(r'^contact', newspaper.views.about_page),
